@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            #f1{
+                width: fit-content;
+                height: fit-content;
+                margin-top: 15%;
+            }
+            #s1{
+                width: 50px;
+                height: 50px;
+            }
+            #s2{
+                width: 50px;
+                height: 50px;
+            }
+            #s3{
+                width: 50px;
+                height: 50px;
+            }
+            #s4{
+                width: 50px;
+                height: 50px;
+            }
+            #s5{
+                width: 50px;
+                height: 50px;
+            }
+            #s6{
+                width: 50px;
+                height: 50px;
+            }
+            #s7{
+                width: 50px;
+                height: 50px;
+            }
+            #s8{
+                width: 50px;
+                height: 50px;
+            }
+            #s9{
+                width: 50px;
+                height: 50px;
+            }
+            #s10{
+                width: 50px;
+                height: 50px;
+            }
+            #s11{
+                width: 50px;
+                height: 50px;
+            }
+            #l1{
+                color: green;
+            }
+            #b{
+                background-image: url("bg1.jpg");
+            }
+            #s12{
+                width: 50px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body id="b">
+        <center>
+            <fieldset id="f1">
+                <legend id="l1"><b>Calculator</b></legend>
+                <input type="button" id="s1" onClick="calc(1)"
+                Value="1" />
+                <input type="button" id="s2" onClick="calc(2)"
+                Value="2" />
+                <input type="button" id="s3" onClick="calc(3)"
+                Value="3" /><br>
+                <input type="button" id="s4" onClick="calc(4)"
+                Value="4" />
+                <input type="button" id="s5" onClick="calc(5)"
+                Value="5" />
+                <input type="button" id="s11" onClick="handleOperationClick('+')" value="+" />
+        <br>
+        <input type="button" id="s6" onClick="calc(6)"
+	Value="6" />
+    <input type="button" id="s7" onClick="calc(7)"
+	Value="7" />
+    <input type="button" id="s8" onClick="calc(8)"
+	Value="8" /><br>
+    <input type="button" id="s9" onClick="calc(9)"
+	Value="9" />
+    <input type="button" id="s10" onClick="calc(10)"
+	Value="10" />
+    <input type="button" id="s12" onClick="handleOperationClick('*')" value="*" /><br>
+        <input type="button" id="s12" onClick="multiplyBy()"
+	Value="Result" /><br>
+    </fieldset>
+    </center>
+    </body>
+    <script>
+        let result = 0;
+        let value1 = 0; 
+        let currentOperation = '';
+
+        function calc(value) {
+            if(result==0)
+            {
+                result = value;
+            }
+            else{
+                value1 = value
+            }
+        }
+
+        function handleOperationClick(operation) {
+            currentOperation = operation;
+        }
+
+        function multiplyBy() {
+            if (currentOperation === '+') {
+                result = result + value1;
+            }
+            if (currentOperation === '*') {
+                result = result * value1;
+            }
+            window.alert(result);
+            result = 0;
+            value1 = 0;
+        }
+    </script>
+</html>

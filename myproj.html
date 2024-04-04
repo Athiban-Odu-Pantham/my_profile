@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Projects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #333;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .project-box {
+            margin: 15px;
+            text-align: center;
+            perspective: 1000px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-box img {
+            border: 5px solid #fff;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .project-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-box:hover img {
+            transform: scale(1.2);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-box:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay .text {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script> function openFullscreen() { if (document.documentElement.requestFullscreen) { document.documentElement.requestFullscreen(); } else if (document.documentElement.webkitRequestFullscreen) { document.documentElement.webkitRequestFullscreen(); } else if (document.documentElement.msRequestFullscreen) { document.documentElement.msRequestFullscreen(); } }
+        function closeFullscreen() { if (document.exitFullscreen) { document.exitFullscreen(); } else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); } else if (document.msExitFullscreen) { document.msExitFullscreen(); } }
+
+        if (screenfull.enabled) { if (screenfull.isFullscreen) { closeFullscreen(); } else { if (confirm("Allow this page to enter full screen mode?")) { openFullscreen(); } else { close(); } } } </script>
+
+    <h1>My Projects</h1>
+    <div class="projects-container">
+        <div class="project-box"> <a href="10th_mark_calculator.html"> <img src="mark1.png" alt="10th_mark_calculator">
+            </a> </div> 
+        <div class="project-box"> <a href="12th_mark_calculator.html"> <img src="commerce.png" alt="commerce">
+            </a> </div>
+        <div class="project-box"> <a href="cc.html"> <img src="cc.png" alt="career guidance">
+            </a> </div>
+        <div class="project-box"> <a href="tree.html"> <img src="dt.png" alt="decision tree">
+            </a> </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<style>
+    form {
+        width: 50%;
+        margin: 50px auto;
+        padding: 20px;
+        border: none;
+        box-shadow: 0 0 10px #ccc;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        position: relative;
+    }
+    form:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: url("form-bg.jpg");
+        background-size: cover;
+        opacity: 0.1;
+        z-index: -1;
+    }
+    label {
+        font-weight: bold;
+        margin-right: 10px;
+        display: block;
+        color: #333;
+    }
+    input[type=text],
+    input[type=date],
+    select {
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: transparent;
+        font-size: 16px;
+        width: 100%;
+        transition: border-bottom 0.2s ease-in-out;
+    }
+    input[type=text]:focus,
+    input[type=date]:focus,
+    select:focus {
+        border-bottom: 2px solid #4CAF50;
+        outline: none;
+    }
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.2s ease-in-out;
+    }
+    input[type=submit]:hover {
+        background-color: #3e8e41;
+    }
+    .error {
+        color: red;
+    }
+    .form-group {
+        margin-bottom: 25px;
+        position: relative;
+    }
+    .form-group label::before {
+        content: "*";
+        color: red;
+        position: absolute;
+        right: 5px;
+        top: 10px;
+    }
+    #f1 {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: orange;
+    }
+    #div2 {
+        width: 33.33%;
+        float: left;
+    }
+    #b6 {
+        background-color: #DCDCDC;
+        height: 40px;
+        width: 140px;
+        border-radius: 350px;
+    }
+</style>
+<body>
+    <div id="div2">
+        <fieldset id="f1">
+            <center>
+                <h1>Menu</h1>
+                <a href="cc.html"><button id="b6">Home</button></a><br><br>
+                <a href="aboutus.html"><button id="b6">About Us</button></a><br><br>
+                <a href="Download.html"><button id="b6">E-Book Download</button></a><br><br>
+                <a href="Download.html"><button id="b6">Help Us</button></a><br><br>
+                <a href="Download.html"><button id="b6">Log Out</button></a><br><br>
+            </center>
+        </fieldset>
+    </div>
+    <form>
+        <label>Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label>Email:</label>
+        <input type="text" id="email" name="email">
+        <br>
+        <label>Nationality:</label>
+        <input type="text" id="nationality" name="nationality">
+        <br>
+        <label>Gender:</label>
+        <input type="text" id="gender" name="gender">
+        <br>
+        <label>Marital Status:</label>
+        <input type="text" id="marital_status" name="marital_status">
+        <br>
+        <label>Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+        <br>
+        <label>SSLC Marks</label>
+        <input type="text" id="SSLC" name="SSLC">
+        <br>
+        <label>HSC Marks</label>
+        <input type="text" id="HSC" name="HSC">
+        <br>
+        <input type="submit" id="submit" value="Submit" onclick="submitFormToFirebase()">
+    </form>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyBIC-v9ZG-YIXQLwdA99aEEYqAVpOFhw_o",
+            authDomain: "authentication-app-a6ad7.firebaseapp.com",
+            databaseURL: "https://authentication-app-a6ad7-default-rtdb.firebaseio.com",
+            projectId: "authentication-app-a6ad7",
+            storageBucket: "authentication-app-a6ad7.appspot.com",
+            messagingSenderId: "742490515366",
+            appId: "1:742490515366:web:48ae8ca5427aef4882d167"
+        };
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+        function submitFormToFirebase() {
+            var username = document.getElementById("username").value;
+            var nationality = document.getElementById("nationality").value;
+            var gender = document.getElementById("gender").value;
+            var marital_status = document.getElementById("marital_status").value;
+            var dob = document.getElementById("dob").value;
+            firebase.database().ref("users").push({
+                username: username,
+                nationality: nationality,
+                gender: gender,
+                marital_status: marital_status,
+                dob: dob
+            });
+        }
+        submit.addEventListener('click', (e) => {
+            var username = document.getElementById("username").value;
+            var nationality = document.getElementById("nationality").value;
+            var gender = document.getElementById("gender").value;
+            var marital_status = document.getElementById("marital_status").value;
+            var dob = document.getElementById("dob").value;
+            signInWithEmailAndPassword(auth, username, nationality,)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    const dt = new Date();
+                    update(ref(database, 'users/' + user.uid), {
+                        last_login: dt,
+                    })
+                    alert('User logged in')
+                    window.location.replace("home.html");
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+
+                    alert(errorMessage);
+
+                });
+        });
+        const user = auth.currentUser;
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const uid = user.uid;
+            }
+        });
+    </script>
+</body>
+</html>

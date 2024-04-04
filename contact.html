@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 20px;
+            color: #007bff; /* Change color as needed */
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #0056b3; /* Change color as needed */
+        }
+
+        .contact-details {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-details p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Contact Form</h1>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <center><input type="submit" value="Send"></center>
+        </form>
+
+        <div class="contact-details">
+            <p>Email: athibananbazhaganp@gmail.com</p>
+            <p>Phone: +919487741178</p>
+            <!-- Add more contact details as needed -->
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100073781261637"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram"></i></a>
+            <!-- Add more social media links as needed -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            var mailto = 'mailto:' + encodeURIComponent('athibananbazhaganp@gmail.com') + '?subject=' + encodeURIComponent('New Message from ' + name) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+
+            window.location.href = mailto; // Open the default email client with the email pre-filled
+        });
+    </script>
+</body>
+
+</html>

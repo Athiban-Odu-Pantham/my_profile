@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style type="text/css">
+	body {
+	margin: 30px;
+	}
+    .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+      
+      .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+      .down{
+        transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+      }
+</style>
+<title>Decision Tree</title>
+</head>
+
+<body bgcolor="yellow">
+    <script>
+        window.alert("Welcome to decision tree")
+    </script>
+    <center>
+    <h1>Decision Tree</h1>
+<form>
+    <h3>Build</h3>
+    <input class="col-xs-3" id="inputdefault1" type="text"  placeholder="percentage for  simple" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><i class = "arrow right"></i>
+    <input class="col-xs-3" id="inputdefault9" type="text"  placeholder="value for  simple" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><br>
+    <input class="col-xs-4" id="inputdefault2" type="text" placeholder="percentage for difficult" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><i class = "arrow right"></i>
+    <input class="col-xs-3" id="inputdefault10" type="text" placeholder="value for difficult" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><br><br><br>
+    <h3>Reuse</h3>
+    <input class="col-xs-3" id="inputdefault3" type="text" placeholder="percentage for mijor change" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><i class = "arrow right"></i>
+    <input class="col-xs-3" id="inputdefault11" type="text" placeholder="value for minor change" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><br>
+    <input class="col-xs-4" id="inputdefault4" type="text" placeholder="percentage for major change" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><br>
+    <input class="col-xs-3" id="inputdefault17" type="text"placeholder="percentage for simple" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><i class = "arrow right"></i>
+    <input class="col-xs-3" id="inputdefault18" type="text" placeholder="value for  simple" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><br>
+    <input class="col-xs-3" id="inputdefault19" type="text" placeholder="percentage for  complex" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><i class = "arrow right"></i>
+    <input class="col-xs-3" id="inputdefault20" type="text" placeholder="value for complex" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><br>
+</center>
+<input class="col-xs-3" id="inputdefault" type="text" placeholder="system name" style="background-color:#DCDCDC; height:40px"><br>
+<center>
+    <h3>Buy</h3>
+    <input class="col-xs-3" id="inputdefault5" type="text"  placeholder="percentage for minor change" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><i class = "arrow right"></i>
+    <input class="col-xs-3" id="inputdefault13" type="text"  placeholder="value for minor change" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><br>
+    <input class="col-xs-4" id="inputdefault6" type="text"  placeholder="percentage for major change" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><i class = "arrow right"></i>
+    <input class="col-xs-3" id="inputdefault14" type="text"  placeholder="value for major change" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><br><br><br>
+    <h3>Contract</h3>
+    <input class="col-xs-3" id="inputdefault7" type="text"  placeholder="percentage for without change" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><i class = "arrow right"></i>
+    <input class="col-xs-3" id="inputdefault15" type="text"  placeholder="value for without change" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><br>
+    <input class="col-xs-4" id="inputdefault8" type="text"  placeholder="percentage for with change" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><i class = "arrow right"></i>
+    <input class="col-xs-3" id="inputdefault16" type="text"  placeholder="value for with change" style="background-color:#DCDCDC; height:40px ;border-radius: 350px;"><br>
+</center>
+
+	
+	<input type="button" onClick="multiplyBy()"
+	Value="Result" /><br>
+</form>
+<script>
+	function multiplyBy()
+	{
+	num1 = document.getElementById("inputdefault1").value;
+	num2 = document.getElementById("inputdefault9").value;
+    num3 = document.getElementById("inputdefault2").value;
+	num4 = document.getElementById("inputdefault10").value;
+    num5 = document.getElementById("inputdefault3").value;
+	num6 = document.getElementById("inputdefault11").value;
+    num7 = document.getElementById("inputdefault4").value;
+    num9 = document.getElementById("inputdefault5").value;
+	num10 = document.getElementById("inputdefault13").value;
+    num11 = document.getElementById("inputdefault6").value;
+	num12 = document.getElementById("inputdefault14").value;
+    num13 = document.getElementById("inputdefault7").value;
+	num14 = document.getElementById("inputdefault15").value;
+    num15 = document.getElementById("inputdefault8").value;
+	num16 = document.getElementById("inputdefault16").value;
+    num21 = document.getElementById("inputdefault17").value;
+    num22 = document.getElementById("inputdefault18").value;
+    num23 = document.getElementById("inputdefault19").value;
+    num24 = document.getElementById("inputdefault20").value;
+    num17 = (num1 * num2) + (num3 * num4);
+    num25 = (num21 * num22) + (num23 * num24);
+    num18 = (num5 * num6) + (num7 * num25);
+    num19 = (num9 * num10) + (num11 * num12);
+    num20 = (num13 * num14) + (num15 * num16);
+    const dec_tree = ["Build","Reuse","Buy","Contract"];
+    const abc=[];
+    abc[0]=num17;
+    abc[1]=num18;
+    abc[2]=num19;
+    abc[3]=num20;
+    var j=0;
+    var a=abc[0];
+    for(var i=0;i<4;i++)
+    {
+        if(a>abc[i])
+        {
+            a=abc[i];
+            j=i;
+        }
+    }
+    
+	window.alert("The company should select :"+dec_tree[j])
+}
+</script>
+</body>
+</html>

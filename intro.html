@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
+    <style>
+        body {
+            background-image: url("goc.avif");
+            background-size: cover;
+            background-position: center;
+        }
+
+        #about-us {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            padding: 50px 0;
+            text-align: center;
+            color: white;
+        }
+
+        #about-us h5 {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        #about-us p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin-top: 50px;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            font-size: 28px;
+            color: white;
+        }
+
+        .social-links a:hover {
+            color: #ffc107;
+        }
+
+        .arrow {
+            position: relative;
+            top: 100px;
+        }
+
+        .arrow a {
+            display: block;
+            text-decoration: none;
+            font-size: 36px;
+            color: white;
+            border: 2px solid white;
+            border-radius: 100%;
+            padding: 10px;
+        }
+        .arrow a:hover {
+            background-color: white;
+            color: #28b463;
+        }
+        @media only screen and (max-width: 768px) {
+            #about-us h5 {
+                font-size: 36px;
+            }
+            .arrow {
+                top: 75px;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            #about-us h5 {
+                font-size: 28px;
+            }
+
+            .arrow {
+                top: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="about-us">
+        <h5>Welcome to Our Website</h5>
+        <p> Welcome to my website, featuring the best work I have done so far. I am dedicated to
+            delivering high-quality products and services. I am committed to excellence and always
+            strive to offer the best possible experience to everyone who interacts with me. </p>
+        <div class="social-links"> <a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i
+                    class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-instagram"></i></a> <a href="#"><i
+                    class="fab fa-linkedin-in"></i></a> </div>
+        <div class="arrow"> <a href="#"><i class="fas fa-angle-down"></i></a> </div>
+    </div>
+</body>
+</html>
